@@ -1,4 +1,5 @@
-while True:
+condition = True
+while condition:
     choice = input("Would you like to convert decimal to binary (1) or binary to decimal (2)?: ")
 
     # Decimal to Binary
@@ -32,8 +33,20 @@ while True:
         # Shortcut using int() function:
         # print(int(str(binary), 2))
 
+    else:
+        print("Please enter either 1 or 2")
+        continue
+
     # Convert again
-    reenter = input("Enter yes to convert again or no to stop: ").lower()
+    while condition:
+        reenter = input("Enter yes to convert again or no to stop: ").lower()
+        if reenter == "yes":
+            break
+        elif reenter == "no":
+            condition = False
+        else:
+            print("Please enter yes or no")
+
     if reenter == "yes":
         continue
     elif reenter == "no":
